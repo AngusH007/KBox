@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+	<head>
+		<title>KBox</title>
+		<meta charset=UTF-8>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.kbox.js"></script>
+		<script type="text/javascript">
+		jQuery(document).ready(function( $ ){
+			$("#test").click(function( e ) {
+				
+				e.preventDefault();
+				// $.KBox.show('jQuery is a cross-browser JavaScript library designed to simplify the client-side scripting of HTML. It was released in January 2006 at BarCamp NYC by John Resig. Used by over 55% of the 10,000 most visited websites, jQuery is the most popular JavaScript library in use today.');
+
+				$.KBox.show({
+					boxContent   : 'jQuery is a cross-browser JavaScript library designed to simplify the client-side scripting of HTML. It was released in January 2006 at BarCamp NYC by John Resig. Used by over 55% of the 10,000 most visited websites, jQuery is the most popular JavaScript library in use today.',
+					boxWidth     : '400px',
+					boxHeight    : '200px',
+					boxBgColor   : '#fff',
+					boxSdColor   : '#666',
+					boxFontFamily: 'Georgia',
+					boxFontColor : '#000'
+				});
+			});
+		});
+		</script>
+		<style type="text/css">
+		body {
+			font-family : Georgia;
+			font-size   : 16px;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>jQuery KBox plugin</h1>
+		<p>click <a id= "test" href="#">here</a> to test the plugin...</p>
+		
+		<h2>Usage:</h2>
+		<p>Step 1: Add jquery.js & jquery.kbox.js to your html file:
+		</p>
+			<pre style="color:#000000; background-color:#eeeeee; font-size:13pt; font-family:'Consolas';"><span style="color:#bb7977; font-weight:bold">&lt;script</span> <span style="color:#8080c0; font-weight:bold">type</span>=<span style="color:#a68500">&quot;text/javascript&quot;</span> <span style="color:#8080c0; font-weight:bold">src</span>=<span style="color:#a68500">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot;</span><span style="color:#bb7977; font-weight:bold">&gt;&lt;/script&gt;</span>
+<span style="color:#bb7977; font-weight:bold">&lt;script</span> <span style="color:#8080c0; font-weight:bold">type</span>=<span style="color:#a68500">&quot;text/javascript&quot;</span> <span style="color:#8080c0; font-weight:bold">src</span>=<span style="color:#a68500">&quot;jquery.kbox.js&quot;</span><span style="color:#bb7977; font-weight:bold">&gt;&lt;/script&gt;</span>
+</pre>
+		
+		<p>Step 2: Add a anchor element to your html file, like this:</p>
+			<pre style="color:#000000; background-color:#eeeeee; font-size:13pt; font-family:'Consolas';"><span style="color:#bb7977; font-weight:bold">&lt;p&gt;</span>click <span style="color:#bb7977; font-weight:bold">&lt;a</span> id= <span style="color:#a68500">&quot;test&quot;</span> <span style="color:#8080c0; font-weight:bold">href</span>=<span style="color:#a68500">&quot;#&quot;</span><span style="color:#bb7977; font-weight:bold">&gt;</span>here<span style="color:#bb7977; font-weight:bold">&lt;/a&gt;</span> to test the plugin...<span style="color:#bb7977; font-weight:bold">&lt;/p&gt;</span>
+</pre>
+
+
+		<p>Step 3: Call the <code>KBox.show</code> function like this:</p>
+		<p><code>$.KBox.show()</code> takes a single string argument - the content you want to show, like this:		</p>
+			<pre style="color:#000000; background-color:#eeeeee; font-size:13pt; font-family:'Consolas';">$<span style="color:#ff0080; font-weight:bold">.</span>KBox<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">show</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'jQuery is a cross-browser JavaScript library designed to simplify the client-side scripting of HTML. It was released in January 2006 at BarCamp NYC by John Resig. Used by over 55% of the 10,000 most visited websites, jQuery is the most popular JavaScript library in use today.'</span><span style="color:#ff0080; font-weight:bold">);</span>
+</pre>
+
+
+		<p>Or takes a single Object argument, like this:</p>
+			<pre style="color:#000000; background-color:#eeeeee; font-size:13pt; font-family:'Consolas';">$<span style="color:#ff0080; font-weight:bold">.</span>KBox<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">show</span><span style="color:#ff0080; font-weight:bold">({</span>
+	boxContent   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'jQuery is a cross-browser JavaScript library designed to simplify the client-side scripting of HTML. It was released in January 2006 at BarCamp NYC by John Resig. Used by over 55% of the 10,000 most visited websites, jQuery is the most popular JavaScript library in use today.'</span><span style="color:#ff0080; font-weight:bold">,</span>
+	boxWidth     <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'400px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+	boxHeight    <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'200px'</span>
+<span style="color:#ff0080; font-weight:bold">});</span>
+</pre>
+
+
+		<p>All default settings:
+			<pre style="color:#000000; background-color:#eeeeee; font-size:13pt; font-family:'Consolas';">$<span style="color:#ff0080; font-weight:bold">.</span>KBox<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">show</span><span style="color:#ff0080; font-weight:bold">({</span>
+	boxContent   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'jQuery is a cross-browser JavaScript library designed to simplify the client-side scripting of HTML. It was released in January 2006 at BarCamp NYC by John Resig. Used by over 55% of the 10,000 most visited websites, jQuery is the most popular JavaScript library in use today.'</span><span style="color:#ff0080; font-weight:bold">,</span>
+	boxWidth     <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'400px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+	boxHeight    <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'200px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+	boxBgColor   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'#fff'</span><span style="color:#ff0080; font-weight:bold">,</span>
+	boxSdColor   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'#666'</span><span style="color:#ff0080; font-weight:bold">,</span>
+	boxFontFamily<span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'Georgia'</span><span style="color:#ff0080; font-weight:bold">,</span>
+	boxFontColor <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'#000'</span>
+<span style="color:#ff0080; font-weight:bold">});</span>
+</pre>
+
+
+		<h2>Source code:</h2>
+		
+			<pre style="color:#000000; background-color:#eeeeee; font-size:13pt; font-family:'Consolas';"><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">function</span><span style="color:#ff0080; font-weight:bold">(</span> $<span style="color:#ff0080; font-weight:bold">,</span> window<span style="color:#ff0080; font-weight:bold">,</span> document <span style="color:#ff0080; font-weight:bold">){</span>
+	$<span style="color:#ff0080; font-weight:bold">.</span>KBox <span style="color:#ff0080; font-weight:bold">= {</span>
+		<span style="color:#f27900">// Default setting of this plugin.</span>
+		opts<span style="color:#ff0080; font-weight:bold">: {</span>
+			boxContent   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'Hello KBox!'</span><span style="color:#ff0080; font-weight:bold">,</span>
+			boxWidth     <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'400px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+			boxHeight    <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'200px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+			boxBgColor   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'#fff'</span><span style="color:#ff0080; font-weight:bold">,</span>
+			boxSdColor   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'#666'</span><span style="color:#ff0080; font-weight:bold">,</span>
+			boxFontFamily<span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'Arial'</span><span style="color:#ff0080; font-weight:bold">,</span>
+			boxFontColor <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'#000'</span>
+		<span style="color:#ff0080; font-weight:bold">},</span>
+
+		<span style="color:#f27900">// Show the box</span>
+		show<span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#bb7977; font-weight:bold">function</span><span style="color:#ff0080; font-weight:bold">(</span> options <span style="color:#ff0080; font-weight:bold">) {</span>
+			<span style="color:#bb7977; font-weight:bold">if</span> <span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">typeof</span> options <span style="color:#ff0080; font-weight:bold">===</span> <span style="color:#a68500">'string'</span><span style="color:#ff0080; font-weight:bold">) {</span>
+				$<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">extend</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">, {</span>
+					boxContent<span style="color:#ff0080; font-weight:bold">:</span> options
+				<span style="color:#ff0080; font-weight:bold">});</span>
+			<span style="color:#ff0080; font-weight:bold">}</span> <span style="color:#bb7977; font-weight:bold">else</span> <span style="color:#ff0080; font-weight:bold">{</span>
+				$<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">extend</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">,</span> options<span style="color:#ff0080; font-weight:bold">);</span>
+			<span style="color:#ff0080; font-weight:bold">}</span>
+
+			<span style="color:#f27900">// Make a background for page</span>
+			$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'&lt;div id=&quot;kboxback&quot;&gt;&lt;/div&gt;'</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">css</span><span style="color:#ff0080; font-weight:bold">({</span>
+				<span style="color:#a68500">'position'</span>      <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'fixed'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'top'</span>           <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'0px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'left'</span>          <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'0px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'width'</span>         <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'100%'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'height'</span>        <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'100%'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'background'</span>    <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'#000'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'z-index'</span>       <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'9999'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'opacity'</span>       <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'0'</span>
+			<span style="color:#ff0080; font-weight:bold">}).</span><span style="color:#004466">appendTo</span><span style="color:#ff0080; font-weight:bold">(</span>$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'body'</span><span style="color:#ff0080; font-weight:bold">)).</span><span style="color:#004466">animate</span><span style="color:#ff0080; font-weight:bold">({</span><span style="color:#a68500">'opacity'</span><span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'.5'</span><span style="color:#ff0080; font-weight:bold">},</span> <span style="color:#800080; font-weight:bold">300</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#a68500">'linear'</span><span style="color:#ff0080; font-weight:bold">);</span>
+
+			<span style="color:#f27900">// The box we want to show</span>
+			$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'&lt;div id=&quot;kboxfront&quot;&gt;&lt;/div&gt;'</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">css</span><span style="color:#ff0080; font-weight:bold">({</span>
+				<span style="color:#a68500">'position'</span>      <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'fixed'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'top'</span>           <span style="color:#ff0080; font-weight:bold">: ((</span>$<span style="color:#ff0080; font-weight:bold">(</span>window<span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">height</span><span style="color:#ff0080; font-weight:bold">() -</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxHeight<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">replace</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'px'</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#a68500">''</span><span style="color:#ff0080; font-weight:bold">)) /</span> <span style="color:#800080; font-weight:bold">2</span><span style="color:#ff0080; font-weight:bold">) +</span> <span style="color:#a68500">'px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'left'</span>          <span style="color:#ff0080; font-weight:bold">: ((</span>$<span style="color:#ff0080; font-weight:bold">(</span>window<span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">width</span><span style="color:#ff0080; font-weight:bold">()  -</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxWidth<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">replace</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'px'</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#a68500">''</span><span style="color:#ff0080; font-weight:bold">)) /</span> <span style="color:#800080; font-weight:bold">2</span><span style="color:#ff0080; font-weight:bold">) +</span> <span style="color:#a68500">'px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'width'</span>         <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxWidth<span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'height'</span>        <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxHeight<span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'background'</span>    <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxBgColor<span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'margin'</span>        <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'0px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'padding'</span>       <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'13px 10px 10px 10px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'border-radius'</span> <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'9px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'box-shadow'</span>    <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'10px 10px 5px '</span> <span style="color:#ff0080; font-weight:bold">+</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxSdColor<span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'z-index'</span>       <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'10000'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'opacity'</span>       <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'0'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'word-wrap'</span>     <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'break-all'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'font-family'</span>   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxFontFamily<span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'color'</span>         <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxFontColor
+			<span style="color:#ff0080; font-weight:bold">}).</span><span style="color:#004466">html</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'&lt;p style=&quot;line-height:1.4&quot;&gt;'</span> <span style="color:#ff0080; font-weight:bold">+</span> <span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxContent <span style="color:#ff0080; font-weight:bold">+</span> <span style="color:#a68500">'&lt;/p&gt;'</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">appendTo</span><span style="color:#ff0080; font-weight:bold">(</span>$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'body'</span><span style="color:#ff0080; font-weight:bold">)).</span><span style="color:#004466">animate</span><span style="color:#ff0080; font-weight:bold">({</span><span style="color:#a68500">'opacity'</span><span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'1'</span><span style="color:#ff0080; font-weight:bold">},</span> <span style="color:#800080; font-weight:bold">300</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#a68500">'linear'</span><span style="color:#ff0080; font-weight:bold">);;</span>
+
+			<span style="color:#f27900">// CLose button</span>
+			$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'&lt;div id=&quot;kboxclose&quot;&gt;&lt;/div&gt;'</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">css</span><span style="color:#ff0080; font-weight:bold">({</span>
+				<span style="color:#a68500">'position'</span>      <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'absolute'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'right'</span>         <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'10px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'top'</span>           <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'7px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'cursor'</span>        <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'pointer'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'font-family'</span>   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'Arial'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'font-weight'</span>   <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'bold'</span><span style="color:#ff0080; font-weight:bold">,</span>
+				<span style="color:#a68500">'color'</span>         <span style="color:#ff0080; font-weight:bold">:</span> <span style="color:#a68500">'#000'</span>
+			<span style="color:#ff0080; font-weight:bold">}).</span><span style="color:#004466">html</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'X'</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">appendTo</span><span style="color:#ff0080; font-weight:bold">(</span>$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'#kboxfront'</span><span style="color:#ff0080; font-weight:bold">)).</span><span style="color:#004466">click</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">function</span><span style="color:#ff0080; font-weight:bold">() {</span>
+				$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'#kboxfront, #kboxback'</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">animate</span><span style="color:#ff0080; font-weight:bold">({</span><span style="color:#a68500">'opacity'</span><span style="color:#ff0080; font-weight:bold">:</span><span style="color:#a68500">'0'</span><span style="color:#ff0080; font-weight:bold">},</span> <span style="color:#800080; font-weight:bold">300</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#a68500">'linear'</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#bb7977; font-weight:bold">function</span><span style="color:#ff0080; font-weight:bold">() {</span>
+					$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">remove</span><span style="color:#ff0080; font-weight:bold">();</span>
+				<span style="color:#ff0080; font-weight:bold">});</span>
+			<span style="color:#ff0080; font-weight:bold">});</span>
+
+			<span style="color:#f27900">// Handle the 'ESC' key</span>
+			$<span style="color:#ff0080; font-weight:bold">(</span>document<span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">keyup</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">function</span><span style="color:#ff0080; font-weight:bold">(</span> e <span style="color:#ff0080; font-weight:bold">) {</span>
+				<span style="color:#bb7977; font-weight:bold">if</span> <span style="color:#ff0080; font-weight:bold">(</span>e<span style="color:#ff0080; font-weight:bold">.</span>keyCode <span style="color:#ff0080; font-weight:bold">===</span> <span style="color:#800080; font-weight:bold">27</span><span style="color:#ff0080; font-weight:bold">) {</span>
+					$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'#kboxfront, #kboxback'</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">animate</span><span style="color:#ff0080; font-weight:bold">({</span><span style="color:#a68500">'opacity'</span><span style="color:#ff0080; font-weight:bold">:</span><span style="color:#a68500">'0'</span><span style="color:#ff0080; font-weight:bold">},</span> <span style="color:#800080; font-weight:bold">300</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#a68500">'linear'</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#bb7977; font-weight:bold">function</span><span style="color:#ff0080; font-weight:bold">() {</span>
+						$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">this</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">remove</span><span style="color:#ff0080; font-weight:bold">();</span>
+					<span style="color:#ff0080; font-weight:bold">});</span>
+				<span style="color:#ff0080; font-weight:bold">}</span>
+			<span style="color:#ff0080; font-weight:bold">});</span>
+
+			<span style="color:#f27900">// Retset the #kboxfront's position when window is resizing...</span>
+			$<span style="color:#ff0080; font-weight:bold">(</span>window<span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">resize</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#bb7977; font-weight:bold">function</span><span style="color:#ff0080; font-weight:bold">() {</span>
+				$<span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'#kboxfront'</span><span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">css</span><span style="color:#ff0080; font-weight:bold">({</span>
+					<span style="color:#a68500">'top'</span>       <span style="color:#ff0080; font-weight:bold">: ((</span>$<span style="color:#ff0080; font-weight:bold">(</span>window<span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">height</span><span style="color:#ff0080; font-weight:bold">() -</span> $<span style="color:#ff0080; font-weight:bold">.</span>KBox<span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxHeight<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">replace</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'px'</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#a68500">''</span><span style="color:#ff0080; font-weight:bold">)) /</span> <span style="color:#800080; font-weight:bold">2</span><span style="color:#ff0080; font-weight:bold">) +</span> <span style="color:#a68500">'px'</span><span style="color:#ff0080; font-weight:bold">,</span>
+					<span style="color:#a68500">'left'</span>      <span style="color:#ff0080; font-weight:bold">: ((</span>$<span style="color:#ff0080; font-weight:bold">(</span>window<span style="color:#ff0080; font-weight:bold">).</span><span style="color:#004466">width</span><span style="color:#ff0080; font-weight:bold">()  -</span> $<span style="color:#ff0080; font-weight:bold">.</span>KBox<span style="color:#ff0080; font-weight:bold">.</span>opts<span style="color:#ff0080; font-weight:bold">.</span>boxWidth<span style="color:#ff0080; font-weight:bold">.</span><span style="color:#004466">replace</span><span style="color:#ff0080; font-weight:bold">(</span><span style="color:#a68500">'px'</span><span style="color:#ff0080; font-weight:bold">,</span> <span style="color:#a68500">''</span><span style="color:#ff0080; font-weight:bold">)) /</span> <span style="color:#800080; font-weight:bold">2</span><span style="color:#ff0080; font-weight:bold">) +</span> <span style="color:#a68500">'px'</span>
+				<span style="color:#ff0080; font-weight:bold">});</span>
+			<span style="color:#ff0080; font-weight:bold">});</span>
+		<span style="color:#ff0080; font-weight:bold">}</span>
+	<span style="color:#ff0080; font-weight:bold">};</span>
+<span style="color:#ff0080; font-weight:bold">})(</span> jQuery<span style="color:#ff0080; font-weight:bold">,</span> window<span style="color:#ff0080; font-weight:bold">,</span> document<span style="color:#ff0080; font-weight:bold">);</span>
+</pre>
+
+
+		
+	</body>
+</html>
